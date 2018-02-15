@@ -3,7 +3,7 @@
 ##Usage
 
 ``` js
-const setupDatabase = require('platziverse-db')
+const setupDatabase = require('iotverse-db')
 
 setupDabase(config).then(db => {
   const { Agent, Metric } = db
