@@ -12,18 +12,18 @@ async function setup () {
     {
       type: 'confirm',
       name: 'setup',
-      message: 'This will detsroy your database, are you sure?',
+      message: 'This will detsroy your database, are you sure?'
     }
   ])
 
   if (!answer.setup) {
     return console.log('Nothing happened :)')
   }
-  
+
   const config = {
     database: process.env.DB_NAME || 'iotverse',
     username: process.env.DB_USER || 'musk',
-    password: process.env.DB_PASS || 'none', //no password needed due to pg_hba.conf, if you want to require password, switch the config to password instead of trust
+    password: process.env.DB_PASS || 'none', // no password needed due to pg_hba.conf, if you want to require password, switch the config to password instead of trust
     host: process.env.DB_HOST || 'localhost',
     dialect: 'postgres',
     logging: s => debug(s),
@@ -34,7 +34,6 @@ async function setup () {
 
   console.log('Succes!')
   process.exit(0)
-
 }
 
 function handleFatalError (err) {
